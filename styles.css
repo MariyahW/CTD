@@ -1,21 +1,46 @@
-body {
-    color: blue;
-    background-color: blanchedalmond;
+/* Colorway
+Baltic Blue #376482
+Dim Grey #666964
+Powder Petal #EDD3C4
+Emerald #7EBC89
+Pearl Aqua #7CDEDC
+ */
+
+body, html {
+    color: black;
+    background-color: #666964;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 header{
     display: flex;
-    background-color: black;
+    background-color: #376482;
     margin-top: 3%;
     padding: 1%;
     /* text-align:center; */
    justify-content: center;
+   width: 100%;
+   height: 5%;
     
 }
 header a {
     color: antiquewhite;
     font-size: larger;
+    padding:5%
 }
 nav {
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    text-align:center;
     padding: 1%;
+    width: 100%;
+}
+main-section{
+    display:block;
+    height: 80%;
+    width: 80%;
+    background-color: #7CDEDC;
+    text-align: center;
 }

@@ -1,7 +1,33 @@
-const axios = require("axios");
-// import * as charting from 'chart.js';
+// const axios = require("axios");
 
-// const dropdown = document.getElementById("citySelect");
+let lat,long;
+const citySelect = document.getElementById("citySelect");
+const typeSelect = document.getElementById('typeSelect');
+citySelect.addEventListener('change', function(){
+
+    const val=this.value;
+    if(val){
+        [lat,long]=val.split(',').map(Number);
+        typeSelect.style.display='inline'
+        
+    }else{
+        typeSelect.style.display='none'
+    }
+});
+
+
+typeSelect.addEventListener('change', function(){
+    const type=this.value;
+    if (type && lat&&long){
+        let page='';
+        if (type==='forecast')page='forecast.html';
+        if (type==='weather')page='weather.html';
+        if (type==='air')page='air.html';
+
+        window.location.href='https://www.example.com'
+        // window.location.href=`${page}?lat=${lat}&long=${long}`;
+    }
+})
 
 async function forecast(lat, long) {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch`;
@@ -22,4 +48,4 @@ function chartTemp(times,temps){
 
 }
 
-forecast(40.7, -74.0);
+

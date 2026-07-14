@@ -1,8 +1,9 @@
-import chart from 'chart.js/auto'
+// import chart from 'chart.js/auto'
 // import { type } from 'express/lib/response';
 
-const wChart= document.getElementById('weatherChart').getContext('2d');
-export function chartTemp (times,temps){
+
+ function chartTemp (times,temps){
+  const wChart= document.getElementById('weatherChart').getContext('2d');
 new Chart(wChart,{
     type:'line',
     data:{
@@ -10,8 +11,8 @@ new Chart(wChart,{
         datasets:[{
             label: 'Temperature (F)',
             data: temps,
-            borderColor: #376482,
-            backgroundColor: #666964,
+            borderColor: '#376482',
+            backgroundColor: '#666964',
             fill: false,
             tension: 0.1
 

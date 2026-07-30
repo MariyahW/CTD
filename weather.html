@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -19,7 +21,16 @@
 
 <main-section>
     <h1>Current Weather</h1>
+    <div id="currentTemp"></div>
 </main-section>
 
+<script src="script.js"></script>
+<script>
+   const urlParams= new URLSearchParams(window.location.search);
+   console.log(urlParams);
+   lat=urlParams.get('lat');
+   long=urlParams.get('long');
+    current(lat,long);
+</script>
 </body>
 </html>

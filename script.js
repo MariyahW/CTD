@@ -29,7 +29,7 @@ typeSelect.addEventListener('change', function(){
         
         window.location.href=`${page}?lat=${lat}&long=${long}`;
     }
-})
+});
 
 async function forecast(lat, long) {
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&hourly=temperature_2m&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch`;
@@ -45,4 +45,21 @@ async function forecast(lat, long) {
   
 }
 
+async function current(lat, long){
+    const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m&forecast_days=1&temperature_unit=fahrenheit`;
+    const contain =document.getElementById("currentTemp");
+    try{
+        const response= await axios.get(url);
+        // const data =response.json;
+        console.log(response);
+        let pass= response.data.current
+        const [datePart,timePart]=pass.time.split('T');
+        contain.innerHTML=`<h2>Date: ${datePart}</h2>
+        <h2>Time: ${timePart}</h2>
+        <h2>Temperature: ${pass.temperature_2m}</h2>`
+        
+    }catch(err){
+        console.log(`Sorry, something went wrong:${err.message}`);
+    }
+}
 

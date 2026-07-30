@@ -22,7 +22,22 @@ new Chart(wChart,{
             scales: {
               x: {
                 display: true,
-                title: { display: true, text: 'Time' }
+                title: { display: true, text: 'Time' },
+                ticks: {
+                  autoSkip: true,
+                  maxRotation: 45,
+                  minRotation: 45,
+                  callback: function(value, index) {
+                      const label = this.getLabelForValue(value);
+                    
+                    const [datePart, timePart] = label.split('T');
+                    
+                    if (timePart === '00:00') {
+                        return datePart;
+                    }
+                    return null; // hide this tick
+                  }
+                }
               },
               y: {
                 display: true,

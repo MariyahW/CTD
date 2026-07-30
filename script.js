@@ -3,6 +3,7 @@
 let lat,long;
 const citySelect = document.getElementById("citySelect");
 const typeSelect = document.getElementById('typeSelect');
+
 citySelect.addEventListener('change', function(){
 
     const val=this.value;
@@ -16,6 +17,7 @@ citySelect.addEventListener('change', function(){
 });
 
 
+
 typeSelect.addEventListener('change', function(){
     const type=this.value;
     if (type && lat&&long){
@@ -24,8 +26,8 @@ typeSelect.addEventListener('change', function(){
         if (type==='weather')page='weather.html';
         if (type==='air')page='air.html';
 
-        window.location.href='https://www.example.com'
-        // window.location.href=`${page}?lat=${lat}&long=${long}`;
+        
+        window.location.href=`${page}?lat=${lat}&long=${long}`;
     }
 })
 
@@ -41,11 +43,6 @@ async function forecast(lat, long) {
     }
   
   
-}
-
-function chartTemp(times,temps){
-    charting.newChart(times,temps)
-
 }
 
 

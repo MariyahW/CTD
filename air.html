@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -18,7 +20,21 @@
 </header>
 <main-section>
 <h1> Air Quality Index</h1>
+
+<canvas id="pmChart" width="600" height="200"></canvas>
+<canvas id="ozoneChart" width="600" height="200"></canvas>
+
 </main-section>
 
+<script src="chart.js"></script>
+<script src="script.js"></script>
+<script>
+   const urlParams= new URLSearchParams(window.location.search);
+   console.log(urlParams);
+   lat=urlParams.get('lat');
+   long=urlParams.get('long');
+    air(lat,long);
+</script>
 </body>
+
 </html>

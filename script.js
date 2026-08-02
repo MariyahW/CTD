@@ -43,6 +43,7 @@ async function forecast(lat, long) {
     const response = await axios.get(url);
     times = response.data.hourly.time;
     temps = response.data.hourly.temperature_2m;
+    document.getElementById('chartContainer').classList.add('has-data');
     chartTemp(times, temps);
   } catch (err) {
     console.log(`Sorry, something went wrong:${err.message}`);
@@ -70,6 +71,7 @@ async function air(lat,long){
     const url=`https://air-quality-api.open-meteo.com/v1/air-quality?latitude=${lat}&longitude=${long}&hourly=pm2_5,ozone`;
     try{
         const response = await axios.get(url);
+        document.getElementById('chartContainer').classList.add('has-data');
         chartpM(response.data.hourly.time, response.data.hourly.pm2_5);
         chartOzone(response.data.hourly.time, response.data.hourly.ozone);
 

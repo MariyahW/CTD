@@ -43,12 +43,21 @@ main-section{
     width: 80%;
     background-color: #7CDEDC;
     text-align: center;
+    
 }
 
-main-section canvas {
-    display:block;
-    height: 80%;
+.chartContainer {
+    background-color: transparent;
+}
+.chartContainer.has-data {
+    display:flexbox;
+    flex-wrap: wrap;
+    /* height: 80%; */
     width: 80%;
     background-color: white;
     text-align: center;
+    justify-self: center;
+
+
 }
+

@@ -71,7 +71,7 @@ async function air(lat,long){
     try{
         const response = await axios.get(url);
         chartpM(response.data.hourly.time, response.data.hourly.pm2_5);
-        // chartOzone(response.data.hourly.time, response.data.ozone);
+        chartOzone(response.data.hourly.time, response.data.hourly.ozone);
 
 
     }catch(err){

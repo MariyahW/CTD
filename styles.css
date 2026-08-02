@@ -44,3 +44,11 @@ main-section{
     background-color: #7CDEDC;
     text-align: center;
 }
+
+main-section canvas {
+    display:block;
+    height: 80%;
+    width: 80%;
+    background-color: white;
+    text-align: center;
+}

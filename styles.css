@@ -39,6 +39,7 @@ nav {
 }
 main-section{
     display:block;
+   
     height: 80%;
     width: 80%;
     background-color: #7CDEDC;
@@ -52,11 +53,12 @@ main-section{
 .chartContainer.has-data {
     display:flexbox;
     flex-wrap: wrap;
-    /* height: 80%; */
+    height: 85%;
     width: 80%;
     background-color: white;
     text-align: center;
     justify-self: center;
+    overflow: auto;
 
 
 }

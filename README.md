@@ -30,12 +30,12 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This project was created as a showcase/take home assignment for the CTD program. It uses the Open-Meteo Weather API to create a JS/HTML/CSS multipage site that showcases information from several API endpoints.
+This project was created as a showcase/take home assignment for the CTD program. It uses the Open-Meteo Weather API to create a JS/HTML/CSS multipage site that showcases information from several API endpoints. It is hosted for view at [https://mariyahw.github.io/CTD/]
 
 Namely the 7 day forecast, fine particle matter and ozone air quality, as well as the current weather. It supports 5 different locations and preserves the selected location's coordinates as URL query parameters as users navigate between pages.
 
 **Pages:**
-- **Home** (`main.html`) – select a city and a data type to view
+- **Home** (`index.html`) – select a city and a data type to view
 - **Current Weather** (`weather.html`) – displays current time and temperature for the selected location
 - **7 Day Forecast** (`forecast.html`) – a Chart.js line chart of hourly temperature over 7 days
 - **Air Quality Index** (`air.html`) – Chart.js line charts for fine particulate matter (PM2.5) and ozone, with color-coded safety zones based on EPA AQI breakpoints
